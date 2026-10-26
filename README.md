@@ -7,7 +7,7 @@ tahminini bir araya getirerek "Bu gece Manisa'dan gözlem uygun mu?" sorusunu ya
 > BVA 2245 Kullanıcı Arayüzü Tasarımı dersi için hazırlanmış bir öğrenci projesidir.
 > Müşteri (bir bilim merkezi/planetaryum) kurgusaldır; ürün herhangi bir kurumun resmî aracı değildir.
 
-**Canlı link:** _(final teslimde eklenecek)_
+Canlı link:
 
 ## Durum
 
@@ -57,10 +57,5 @@ python scripts/fetch_data.py   # Python 3.10+, ek paket gerekmez
 
 ## CV cümlesi
 
-_(final teslimde eklenecek – örnek kalıp: fiil + ne yaptım + teknoloji + ölçülebilir sonuç)_
 
-## Yapay zekâ kullanım beyanı
-
-- **Claude (Anthropic):** Ödev metninin ara teslim adımlarına ayrılması, API adreslerinin kontrolü,
-  `scripts/fetch_data.py` ve `.github/workflows/fetch.yml` dosyalarının ilk taslağı.
-  _(Burada çıktıyı nasıl değiştirdiğini kendi cümlelerinle yaz.)_
+ 
