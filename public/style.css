@@ -1,0 +1,72 @@
+:root {
+  --bg: #0f1420;
+  --surface: #182033;
+  --border: #2c3854;
+  --text: #e8ecf5;
+  --muted: #a9b4cc;
+  --accent: #8ab4ff;
+  --ok: #7ee2a8;
+  --warn: #ffd27a;
+  --bad: #ff9a9a;
+  --focus: #ffd27a;
+  --radius: 10px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Gece modu: yalnızca kırmızı tonlar (karanlık uyumunu korur), kontrast AA */
+:root[data-theme="night"] {
+  --bg: #0a0000;
+  --surface: #160202;
+  --border: #4a0d0d;
+  --text: #ff8a7a;
+  --muted: #e0695a;
+  --accent: #ff8a7a;
+  --ok: #ff8a7a;
+  --warn: #ff8a7a;
+  --bad: #ff8a7a;
+  --focus: #ffb3a8;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.skip { position: absolute; left: -999px; top: 0; background: var(--surface); padding: 8px 12px; }
+.skip:focus { left: 8px; top: 8px; z-index: 10; }
+
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 16px; border-bottom: 1px solid var(--border); }
+.top h1 { margin: 0; font-size: 1.4rem; }
+.meta { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
+.actions { display: flex; gap: 8px; }
+button { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+button[aria-pressed="true"] { border-color: var(--accent); }
+
+main { max-width: 1200px; margin: 0 auto; padding: 16px; display: grid; gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.card h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.card h3 { margin: 0; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.big { font-size: 1.8rem; font-weight: 700; margin: 4px 0; }
+.muted { color: var(--muted); margin: 0; font-size: .9rem; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .kpis { grid-template-columns: 1fr; } .big { font-size: 1.5rem; } }
+
+.banner { background: var(--surface); border: 2px solid var(--warn); border-radius: var(--radius); padding: 12px 16px; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; font-size: .82rem; white-space: nowrap; }
+.s-ok { color: var(--ok); }
+.s-warn { color: var(--warn); }
+.s-bad { color: var(--bad); }
+
+.skeleton { display: inline-block; min-width: 6em; border-radius: 6px; background: linear-gradient(90deg, var(--border), var(--surface), var(--border)); background-size: 200% 100%; animation: sk 1.2s infinite linear; }
+@keyframes sk { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
+
+.foot { max-width: 1200px; margin: 0 auto; padding: 16px; color: var(--muted); font-size: .85rem; }

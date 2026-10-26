@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uzay Havası ve Gökyüzü Panosu</title>
+  <meta name="description" content="Kp indeksi, güneş rüzgârı, ISS konumu ve Manisa bulutluluğuyla gözlem planlama panosu (öğrenci projesi).">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <header class="top">
+    <div>
+      <h1>Uzay Havası ve Gökyüzü Panosu</h1>
+      <p class="meta" id="updated" aria-live="polite">Veriler yükleniyor…</p>
+    </div>
+    <div class="actions">
+      <button type="button" id="refresh">Yenile</button>
+      <button type="button" id="night" aria-pressed="false">Gece modu (kırmızı)</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="banner" class="banner" role="status" hidden></div>
+
+    <section class="verdict card" aria-labelledby="verdict-title">
+      <h2 id="verdict-title">Bu gece Manisa'dan gözlem uygun mu?</h2>
+      <p class="big" id="verdict"><span class="skeleton">&nbsp;</span></p>
+      <p id="verdict-why" class="muted"></p>
+    </section>
+
+    <section class="kpis" aria-label="Öne çıkan göstergeler">
+      <article class="card kpi"><h3>Anlık Kp</h3><p class="big" id="kpi-kp"><span class="skeleton">&nbsp;</span></p><p class="muted" id="kpi-kp-sub"></p></article>
+      <article class="card kpi"><h3>Bu gece bulutluluk</h3><p class="big" id="kpi-cloud"><span class="skeleton">&nbsp;</span></p><p class="muted">20:00–04:00 ortalaması</p></article>
+      <article class="card kpi"><h3>Güneş rüzgârı</h3><p class="big" id="kpi-wind"><span class="skeleton">&nbsp;</span></p><p class="muted" id="kpi-wind-sub"></p></article>
+      <article class="card kpi"><h3>ISS şu an</h3><p class="big" id="kpi-iss"><span class="skeleton">&nbsp;</span></p><p class="muted" id="kpi-iss-sub"></p></article>
+    </section>
+
+    <section class="card" aria-labelledby="src-title">
+      <h2 id="src-title">Veri kaynakları ve devre durumu</h2>
+      <p class="muted">Her kaynak bağımsızdır: biri çökerse yalnızca o bölüm son başarılı veriyle gösterilir.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Kaynak</th><th scope="col">Durum</th><th scope="col">Devre (circuit breaker)</th><th scope="col">Son başarılı çekim</th><th scope="col">Not</th></tr></thead>
+          <tbody id="sources"><tr><td colspan="5"><span class="skeleton">&nbsp;</span></td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Bilgilendirme amaçlı öğrenci projesidir; tavsiye değildir. Resmî uzay havası uyarıları için <a href="https://www.swpc.noaa.gov/">NOAA SWPC</a>.</p>
+    <p>Kaynaklar: <a href="https://www.swpc.noaa.gov/">NOAA SWPC</a> · <a href="https://wheretheiss.at/">wheretheiss.at</a> · <a href="https://open-meteo.com/">Open-Meteo</a> (CC BY 4.0) · <a href="https://github.com/KerimX54/uzay-havasi-panosu">GitHub</a></p>
+  </footer>
+</body>
+</html>

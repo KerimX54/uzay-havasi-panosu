@@ -1,0 +1,35 @@
+# Uzay Havası ve Gökyüzü Panosu - Cloudflare Worker (altyapı kod olarak / IaC)
+# Bu dosya Worker'ı, statik dosyaları, KV önbelleğini, ortam değişkenlerini ve log ayarlarını tanımlar.
+# Gizli değerler (ADMIN_TOKEN) burada DEĞİL, Cloudflare'in Secrets kasasında tutulur.
+
+name = "uzay-havasi-panosu"
+main = "worker/index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+# Statik ön yüz (public/). Her istek önce Worker'dan geçer ki güvenlik başlıkları her yanıta eklensin.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+# Önbellek: kaynakların son başarılı yanıtları (API çökünce buradan sunulur)
+# ve yönetici panelinden açılan "simüle kesinti" bayrakları.
+# id değerini Cloudflare panelinde KV namespace oluşturduktan sonra buraya yapıştırın.
+[[kv_namespaces]]
+binding = "CACHE"
+id = "BURAYA_KV_ID_YAPISTIR"
+
+# Gizli olmayan ayarlar
+[vars]
+# CORS izin listesi: yalnızca bu kökenlerden gelen tarayıcı istekleri API'yi okuyabilir.
+# Kendi workers.dev adresiniz otomatik olarak izinlidir (aynı köken).
+ALLOWED_ORIGINS = "https://kerimx54.github.io"
+BREAKER_FAILURE_THRESHOLD = "3"
+BREAKER_COOLDOWN_SECONDS = "60"
+UPSTREAM_TIMEOUT_MS = "4000"
+
+# Workers Logs: erişim ve hata log'ları Cloudflare panelinde toplanır.
+[observability]
+enabled = true
+head_sampling_rate = 1
