@@ -18,7 +18,7 @@ run_worker_first = true
 # id değerini Cloudflare panelinde KV namespace oluşturduktan sonra buraya yapıştırın.
 [[kv_namespaces]]
 binding = "CACHE"
-id = "BURAYA_KV_ID_YAPISTIR"
+id = "252c2ccd7f4f4ce7bc7aa75a39bb4455"
 
 # Gizli olmayan ayarlar
 [vars]
