@@ -1,0 +1,32 @@
+{
+ "zaman": "2026-11-28T17:36:45Z",
+ "ozet": {
+  "kp_son": 3.67,
+  "kp_son_zaman": "2026-11-28T12:00:00",
+  "kp_tahmin_max_3gun": 3.67,
+  "ruzgar_hizi_kms": 571.9,
+  "proton_yogunlugu": 2.97,
+  "bz_gsm_nT": -1.28,
+  "bt_nT": 9.01,
+  "iss_enlem": -51.733687773213,
+  "iss_boylam": 147.45479208144,
+  "iss_gorunurluk": "daylight",
+  "bulut_bu_gece_ort": 53.8,
+  "gozlem_durumu": "kısmen uygun"
+ },
+ "iss": {
+  "name": "iss",
+  "id": 25544,
+  "latitude": -51.733687773213,
+  "longitude": 147.45479208144,
+  "altitude": 440.33871671362,
+  "velocity": 27521.459295389,
+  "visibility": "daylight",
+  "footprint": 4609.5232179332,
+  "timestamp": 1795887412,
+  "daynum": 2461373.2339352,
+  "solar_lat": -21.392027292626,
+  "solar_lon": 272.78618407296,
+  "units": "kilometers"
+ }
+}
